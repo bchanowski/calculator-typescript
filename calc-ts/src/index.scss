@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;500;900&display=swap");
+@import "./shared/shared.scss";
+html,
+body,
+#root,
+.app {
+  font-family: "Raleway", sans-serif;
+  background-color: $primary-color;
+}

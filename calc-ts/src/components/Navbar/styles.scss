@@ -1,0 +1,36 @@
+@import "../../shared/shared.scss";
+
+.container {
+  color: $secondary-color;
+  display: flex;
+  justify-content: space-between;
+  margin: $margin;
+}
+
+.leftNav {
+  font-weight: 900;
+  font-size: $normal-font-size * 2;
+  margin-top: $margin;
+  margin-left: $margin;
+
+  @media screen and (max-width: 550px) {
+    font-weight: 600;
+    font-size: $normal-font-size;
+    margin: calc($margin / 4);
+  }
+}
+
+.rightNav {
+  font-size: $normal-font-size;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navOption {
+  margin-right: $margin * 2;
+  padding-bottom: $margin * 2;
+  z-index: 30;
+  &:hover {
+    cursor: pointer;
+  }
+}
