@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import ParticlesComponent from "./components/particlesComponent";
 import { SelectedPage } from "./shared/types";
+import Numbers from "./components/Numbers";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -27,6 +28,7 @@ function App() {
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
+      <Numbers setSelectedPage={setSelectedPage} />
       <ParticlesComponent />
     </>
   );

@@ -1,0 +1,14 @@
+@import "../../shared/shared.scss";
+
+.num-container {
+  color: $secondary-color;
+  display: flex;
+  margin: $margin;
+}
+
+.num-button {
+  z-index: 30;
+  &:hover {
+    cursor: pointer;
+  }
+}
