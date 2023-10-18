@@ -1,14 +1,14 @@
 import "./styles.scss";
 
 type Props = {
-  number: number | string;
+  content: string;
   onClick: () => void;
 };
 
-const NumbersButton = ({ number, onClick }: Props) => {
+const NumbersButton = ({ content, onClick }: Props) => {
   return (
     <button className="num-button" onClick={onClick}>
-      {number}
+      {content}
     </button>
   );
 };
