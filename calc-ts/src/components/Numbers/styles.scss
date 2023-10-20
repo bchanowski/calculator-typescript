@@ -3,6 +3,13 @@
 .num-container {
   color: $secondary-color;
   display: flex;
+  flex-direction: column;
+  margin: $margin;
+}
+
+.button-column {
+  color: $secondary-color;
+  display: flex;
   margin: $margin;
 }
 
