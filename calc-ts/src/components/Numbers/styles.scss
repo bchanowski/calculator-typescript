@@ -4,18 +4,61 @@
   color: $secondary-color;
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: $margin;
+}
+
+.calc-background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(25, 37, 77, 0.4);
+  border-radius: 10px;
+  padding: $margin;
 }
 
 .button-column {
-  color: $secondary-color;
   display: flex;
-  margin: $margin;
+}
+
+.input-column {
+  display: flex;
+  float: right;
+}
+
+.calc-input {
+  border: 2px $secondary-color solid;
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(159, 159, 161, 0.8);
+  padding: 0px;
+  width: 333px;
+  height: 50px;
+  margin: calc($margin / 2);
+  font-size: calc($normal-font-size / 1.5);
+  font-weight: 600;
+  color: $primary-color;
+  background-color: $secondary-color;
 }
 
 .num-button {
+  background: $transparent;
+  border: 2px $secondary-color solid;
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(159, 159, 161, 0.8);
+  color: $secondary-color;
   z-index: 30;
+  margin: calc($margin / 2);
+  font-size: calc($normal-font-size / 1.5);
+  font-weight: 600;
+  width: 100px;
+  height: 50px;
   &:hover {
     cursor: pointer;
+    background-color: $secondary-color;
+    color: $primary-color;
   }
+}
+
+.reset-btn {
+  background-color: rgba(185, 40, 4, 0.5);
 }

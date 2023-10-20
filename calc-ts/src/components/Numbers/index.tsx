@@ -70,33 +70,76 @@ const Numbers = ({ setSelectedPage }: Props) => {
         className="num-container"
         onViewportEnter={() => setSelectedPage(SelectedPage.Numbers)}
       >
-        <div className="button-column">
-          <input value={number + sign + secondNumber} disabled></input>
-          <NumbersButton content={"C"} onClick={handleResetClick} />
-        </div>
-        <div className="button-column">
-          <NumbersButton content={"1"} onClick={() => handleNumberClick("1")} />
-          <NumbersButton content={"2"} onClick={() => handleNumberClick("2")} />
-          <NumbersButton content={"3"} onClick={() => handleNumberClick("3")} />
-          <NumbersButton content={"+"} onClick={() => handleSignClick("+")} />
-        </div>
-        <div className="button-column">
-          <NumbersButton content={"4"} onClick={() => handleNumberClick("4")} />
-          <NumbersButton content={"5"} onClick={() => handleNumberClick("5")} />
-          <NumbersButton content={"6"} onClick={() => handleNumberClick("6")} />
-          <NumbersButton content={"-"} onClick={() => handleSignClick("-")} />
-        </div>
-        <div className="button-column">
-          <NumbersButton content={"7"} onClick={() => handleNumberClick("7")} />
-          <NumbersButton content={"8"} onClick={() => handleNumberClick("8")} />
-          <NumbersButton content={"9"} onClick={() => handleNumberClick("9")} />
-          <NumbersButton content={"*"} onClick={() => handleSignClick("*")} />
-        </div>
-        <div className="button-column">
-          <NumbersButton content={"0"} onClick={() => handleNumberClick("0")} />
-          <NumbersButton content={"."} onClick={() => handleNumberClick(".")} />
-          <NumbersButton content={"="} onClick={handleResultClick} />
-          <NumbersButton content={"/"} onClick={() => handleSignClick("/")} />
+        <div className="calc-background">
+          <div className="input-column">
+            <input
+              className="calc-input"
+              value={number + sign + secondNumber}
+              disabled
+            ></input>
+            <NumbersButton
+              addClass={"reset-btn"}
+              content={"C"}
+              onClick={handleResetClick}
+            />
+          </div>
+          <div className="button-column">
+            <NumbersButton
+              content={"1"}
+              onClick={() => handleNumberClick("1")}
+            />
+            <NumbersButton
+              content={"2"}
+              onClick={() => handleNumberClick("2")}
+            />
+            <NumbersButton
+              content={"3"}
+              onClick={() => handleNumberClick("3")}
+            />
+            <NumbersButton content={"+"} onClick={() => handleSignClick("+")} />
+          </div>
+          <div className="button-column">
+            <NumbersButton
+              content={"4"}
+              onClick={() => handleNumberClick("4")}
+            />
+            <NumbersButton
+              content={"5"}
+              onClick={() => handleNumberClick("5")}
+            />
+            <NumbersButton
+              content={"6"}
+              onClick={() => handleNumberClick("6")}
+            />
+            <NumbersButton content={"-"} onClick={() => handleSignClick("-")} />
+          </div>
+          <div className="button-column">
+            <NumbersButton
+              content={"7"}
+              onClick={() => handleNumberClick("7")}
+            />
+            <NumbersButton
+              content={"8"}
+              onClick={() => handleNumberClick("8")}
+            />
+            <NumbersButton
+              content={"9"}
+              onClick={() => handleNumberClick("9")}
+            />
+            <NumbersButton content={"*"} onClick={() => handleSignClick("*")} />
+          </div>
+          <div className="button-column">
+            <NumbersButton
+              content={"0"}
+              onClick={() => handleNumberClick("0")}
+            />
+            <NumbersButton
+              content={"."}
+              onClick={() => handleNumberClick(".")}
+            />
+            <NumbersButton content={"="} onClick={handleResultClick} />
+            <NumbersButton content={"/"} onClick={() => handleSignClick("/")} />
+          </div>
         </div>
       </motion.div>
     </>
