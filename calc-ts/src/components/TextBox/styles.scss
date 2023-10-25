@@ -1,0 +1,42 @@
+@import "../../shared/shared.scss";
+
+.textbox-container {
+  display: flex;
+  flex-direction: column;
+  margin: calc($margin * 2);
+  @media screen and (max-width: 1180px) {
+    margin: $margin;
+  }
+}
+
+.title-text {
+  font-size: $normal-font-size * 2;
+  margin: 0px calc($margin * 4) 0px;
+
+  @media screen and (max-width: 1450px) {
+    font-size: $normal-font-size;
+  }
+  @media screen and (max-width: 470px) {
+    margin: 5px;
+    font-size: calc($normal-font-size / 2);
+  }
+}
+
+.desc-text {
+  font-size: calc($normal-font-size/2.5);
+  width: 600px;
+  margin: $margin;
+
+  @media screen and (max-width: 1450px) {
+    font-size: calc($normal-font-size / 3);
+    width: 300px;
+  }
+
+  @media screen and (max-width: 1180px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 470px) {
+    font-size: calc($normal-font-size / 4);
+  }
+}

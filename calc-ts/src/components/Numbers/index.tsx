@@ -2,6 +2,10 @@ import { SelectedPage } from "../../shared/types";
 import { motion } from "framer-motion";
 import NumbersButton from "./NumbersButton";
 import { useState } from "react";
+import TextBox from "../TextBox";
+import "./styles.scss";
+import "./data";
+import { calculatorText } from "./data";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -70,6 +74,10 @@ const Numbers = ({ setSelectedPage }: Props) => {
         className="num-container"
         onViewportEnter={() => setSelectedPage(SelectedPage.Numbers)}
       >
+        <TextBox
+          title={calculatorText.title}
+          description={calculatorText.desc}
+        />
         <div className="calc-background">
           <div className="input-column">
             <input
@@ -96,7 +104,11 @@ const Numbers = ({ setSelectedPage }: Props) => {
               content={"3"}
               onClick={() => handleNumberClick("3")}
             />
-            <NumbersButton content={"+"} onClick={() => handleSignClick("+")} />
+            <NumbersButton
+              addClass={"sign-btn"}
+              content={"+"}
+              onClick={() => handleSignClick("+")}
+            />
           </div>
           <div className="button-column">
             <NumbersButton
@@ -111,7 +123,11 @@ const Numbers = ({ setSelectedPage }: Props) => {
               content={"6"}
               onClick={() => handleNumberClick("6")}
             />
-            <NumbersButton content={"-"} onClick={() => handleSignClick("-")} />
+            <NumbersButton
+              addClass={"sign-btn"}
+              content={"-"}
+              onClick={() => handleSignClick("-")}
+            />
           </div>
           <div className="button-column">
             <NumbersButton
@@ -126,7 +142,11 @@ const Numbers = ({ setSelectedPage }: Props) => {
               content={"9"}
               onClick={() => handleNumberClick("9")}
             />
-            <NumbersButton content={"*"} onClick={() => handleSignClick("*")} />
+            <NumbersButton
+              addClass={"sign-btn"}
+              content={"*"}
+              onClick={() => handleSignClick("*")}
+            />
           </div>
           <div className="button-column">
             <NumbersButton
@@ -134,11 +154,20 @@ const Numbers = ({ setSelectedPage }: Props) => {
               onClick={() => handleNumberClick("0")}
             />
             <NumbersButton
+              addClass={"sign-btn"}
               content={"."}
               onClick={() => handleNumberClick(".")}
             />
-            <NumbersButton content={"="} onClick={handleResultClick} />
-            <NumbersButton content={"/"} onClick={() => handleSignClick("/")} />
+            <NumbersButton
+              addClass={"sign-btn"}
+              content={"="}
+              onClick={handleResultClick}
+            />
+            <NumbersButton
+              addClass={"sign-btn"}
+              content={"/"}
+              onClick={() => handleSignClick("/")}
+            />
           </div>
         </div>
       </motion.div>
