@@ -2,7 +2,7 @@ import { SelectedPage } from "../../shared/types";
 import { motion } from "framer-motion";
 import SelectTemp from "./SelectTemp";
 import "./styles.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type Props = { setSelectedPage: (value: SelectedPage) => void };
 
@@ -16,21 +16,21 @@ const Temperature = ({ setSelectedPage }: Props) => {
     if (e.currentTarget.value === "C") setTempFrom("C");
     else if (e.currentTarget.value === "K") setTempFrom("K");
     else setTempFrom("F");
-    calculateValue();
   };
   const onRadioChangeTo = (e: React.FormEvent<HTMLInputElement>) => {
     if (e.currentTarget.value === "C") setTempTo("C");
     else if (e.currentTarget.value === "K") setTempTo("K");
     else setTempTo("F");
-    calculateValue();
   };
 
   const updateValue = (e: React.FormEvent<HTMLInputElement>) => {
     setUserValue(parseFloat(e.currentTarget.value));
-    calculateValue();
   };
 
-  const calculateValue = () => {
+  useEffect(() => {
+    console.log(userValue);
+    console.log(tempFrom);
+    console.log(tempTo);
     if (tempFrom !== tempTo) {
       if (tempFrom === "C") {
         if (tempTo === "K") setResultValue(userValue * 1.8 + 32);
@@ -43,7 +43,7 @@ const Temperature = ({ setSelectedPage }: Props) => {
         else if (tempTo === "F") setResultValue(userValue * 1.8 - 459.67);
       }
     } else setResultValue(userValue);
-  };
+  }, [userValue, tempFrom, tempTo]);
   return (
     <>
       <motion.div
