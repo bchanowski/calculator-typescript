@@ -30,7 +30,7 @@ const Numbers = ({ setSelectedPage }: Props) => {
   const handleSignClick = (clickSign: string) => {
     if (sign === "") setSign(clickSign);
     else {
-      getResult();
+      if (secondNumber !== "") getResult();
       setSign(clickSign);
     }
   };
