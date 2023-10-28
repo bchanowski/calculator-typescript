@@ -6,8 +6,8 @@ type Props = {
 
 const SelectTemp = ({ radioName, stateTemp, onChangeTemp }: Props) => {
   return (
-    <div>
-      <div>
+    <div className="temp-radio-container">
+      <div className="temp-radio">
         <h3>CELSIUS</h3>
         <input
           type="radio"
@@ -17,7 +17,7 @@ const SelectTemp = ({ radioName, stateTemp, onChangeTemp }: Props) => {
           checked={stateTemp === "C"}
         />
       </div>
-      <div>
+      <div className="temp-radio">
         <h3>FAHRENHEIT</h3>
         <input
           type="radio"
@@ -27,7 +27,7 @@ const SelectTemp = ({ radioName, stateTemp, onChangeTemp }: Props) => {
           checked={stateTemp === "F"}
         />
       </div>
-      <div>
+      <div className="temp-radio">
         <h3>KELVIN</h3>
         <input
           type="radio"

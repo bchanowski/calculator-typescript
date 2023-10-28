@@ -1,4 +1,66 @@
+@import "../../shared/shared.scss";
+
 .temp-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   z-index: 30;
+  color: $secondary-color;
+}
+
+.temp-container-select {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 30;
+  margin: $margin;
+}
+
+.temp-title {
+  font-size: $normal-font-size;
+}
+
+.temp-text {
+  margin: $margin;
+}
+
+.temp-radio-container {
+  margin: $margin;
+  padding: $margin;
+  background-color: $background-box-color;
+}
+
+.temp-radio {
+  display: flex;
+}
+
+.temp-inputs-cont {
+  display: flex;
+  flex-direction: column;
+}
+
+.temp-input-cont {
+  margin: $margin;
+}
+
+.temp-input {
+  font-size: calc($normal-font-size / 2);
+  font-weight: 600;
+  color: $primary-color;
+  background-color: $secondary-color;
+  border-radius: 8px;
+  box-shadow: $box-shadow-white;
+  border: 2px $secondary-color solid;
+  padding: 0px;
+  &:disabled {
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.temp-unit-text {
+  font-size: calc($normal-font-size / 2);
+  font-weight: 600;
+  margin-left: 5px;
 }

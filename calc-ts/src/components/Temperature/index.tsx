@@ -27,10 +27,17 @@ const Temperature = ({ setSelectedPage }: Props) => {
     setUserValue(parseFloat(e.currentTarget.value));
   };
 
+  const onlyNumberInput = (e: React.KeyboardEvent<object>) => {
+    const key = parseInt(e.code);
+    if (key && (key <= 47 || key >= 58) && key != 8) {
+      e.preventDefault();
+    } else if (e.code == "Backspace" && userValue.toString().length == 1) {
+      setUserValue(0);
+      e.preventDefault();
+    }
+  };
+
   useEffect(() => {
-    console.log(userValue);
-    console.log(tempFrom);
-    console.log(tempTo);
     if (tempFrom !== tempTo) {
       if (tempFrom === "C") {
         if (tempTo === "K") setResultValue(userValue * 1.8 + 32);
@@ -50,32 +57,34 @@ const Temperature = ({ setSelectedPage }: Props) => {
         className="temp-container"
         onViewportEnter={() => setSelectedPage(SelectedPage.Temperature)}
       >
-        <h1>TEMPERATURE CALCULATOR</h1>
-        <div className="temp-container">
+        <h1 className="temp-title">TEMPERATURE CALCULATOR</h1>
+        <div className="temp-container-select">
           <SelectTemp
             radioName="tempFrom"
             stateTemp={tempFrom}
             onChangeTemp={onRadioChangeFrom}
           />
-          <h1>TO</h1>
+          <h1 className="temp-text">TO</h1>
           <SelectTemp
             radioName="tempTo"
             stateTemp={tempTo}
             onChangeTemp={onRadioChangeTo}
           />
-          <div>
-            <input
-              type="text"
-              placeholder="0"
-              onKeyDown={(event) => {
-                if (!/[0-9]/.test(event.key)) {
-                  event.preventDefault();
-                }
-              }}
-              onChange={updateValue}
-            />{" "}
-            °{tempFrom}
-            <input value={resultValue} disabled /> °{tempTo}
+          <div className="temp-inputs-cont">
+            <div className="temp-input-cont">
+              <input
+                className="temp-input"
+                type="text"
+                value={userValue}
+                onKeyDown={onlyNumberInput}
+                onChange={updateValue}
+              />
+              <a className="temp-unit-text">°{tempFrom}</a>
+            </div>
+            <div className="temp-input-cont">
+              <input className="temp-input" value={resultValue} disabled />
+              <a className="temp-unit-text">°{tempTo}</a>
+            </div>
           </div>
         </div>
       </motion.div>
