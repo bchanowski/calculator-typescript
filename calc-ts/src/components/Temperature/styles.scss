@@ -14,14 +14,40 @@
   align-items: center;
   z-index: 30;
   margin: $margin;
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: 520px) {
+    margin: 0px;
+  }
+}
+
+.select-temps-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 30;
+  @media screen and (max-width: 430px) {
+    flex-direction: column;
+  }
 }
 
 .temp-title {
   font-size: $normal-font-size;
+  @media screen and (max-width: 720px) {
+    font-size: calc($normal-font-size * 0.7);
+  }
+  @media screen and (max-width: 520px) {
+    font-size: calc($normal-font-size * 0.4);
+  }
 }
 
 .temp-text {
   margin: $margin;
+  @media screen and (max-width: 520px) {
+    font-size: calc($normal-font-size * 0.4);
+    margin: 0px;
+  }
 }
 
 .temp-radio-container {
@@ -57,10 +83,16 @@
       cursor: not-allowed;
     }
   }
+  @media screen and (max-width: 520px) {
+    font-size: calc($normal-font-size * 0.4);
+  }
 }
 
 .temp-unit-text {
   font-size: calc($normal-font-size / 2);
   font-weight: 600;
   margin-left: 5px;
+  @media screen and (max-width: 520px) {
+    font-size: calc($normal-font-size * 0.4);
+  }
 }

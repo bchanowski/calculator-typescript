@@ -59,17 +59,19 @@ const Temperature = ({ setSelectedPage }: Props) => {
       >
         <h1 className="temp-title">TEMPERATURE CALCULATOR</h1>
         <div className="temp-container-select">
-          <SelectTemp
-            radioName="tempFrom"
-            stateTemp={tempFrom}
-            onChangeTemp={onRadioChangeFrom}
-          />
-          <h1 className="temp-text">TO</h1>
-          <SelectTemp
-            radioName="tempTo"
-            stateTemp={tempTo}
-            onChangeTemp={onRadioChangeTo}
-          />
+          <div className="select-temps-container">
+            <SelectTemp
+              radioName="tempFrom"
+              stateTemp={tempFrom}
+              onChangeTemp={onRadioChangeFrom}
+            />
+            <h1 className="temp-text">TO</h1>
+            <SelectTemp
+              radioName="tempTo"
+              stateTemp={tempTo}
+              onChangeTemp={onRadioChangeTo}
+            />
+          </div>
           <div className="temp-inputs-cont">
             <div className="temp-input-cont">
               <input
