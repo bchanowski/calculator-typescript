@@ -28,10 +28,10 @@ const Numbers = ({ setSelectedPage }: Props) => {
     else setNumber(number + num);
   };
   const handleSignClick = (clickSign: string) => {
-    if (sign === "") setSign(clickSign);
+    if (sign === "" && number !== "") setSign(clickSign);
     else {
       if (secondNumber !== "") getResult();
-      setSign(clickSign);
+      if (number !== "") setSign(clickSign);
     }
   };
   const handleResetClick = () => {
