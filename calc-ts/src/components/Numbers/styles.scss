@@ -42,16 +42,15 @@
   border-radius: 10px;
   box-shadow: $box-shadow-white;
   padding: 0px;
-  width: 400px;
-  height: 70px;
+  width: 13em;
+  height: 2em;
   margin: calc($margin / 2);
   font-size: calc($normal-font-size / 1.5);
   font-weight: 600;
   color: $primary-color;
   background-color: $secondary-color;
   @media screen and (max-width: 700px) {
-    width: 220px;
-    height: 35px;
+    font-size: calc($normal-font-size / 2.7);
   }
 }
 
@@ -65,25 +64,19 @@
   margin: calc($margin / 2);
   font-size: calc($normal-font-size / 1.5);
   font-weight: 600;
-  width: 120px;
-  height: 70px;
+  width: 4em;
+  height: 2em;
   &:hover {
     cursor: pointer;
     background-color: $secondary-color;
     color: $primary-color;
-    width: 130px;
-    height: 80px;
-    margin: calc(($margin / 2) - 5px);
+    width: 4.2em;
+    height: 2.2em;
+    margin: calc(($margin / 2) - 0.1em);
   }
 
   @media screen and (max-width: 700px) {
-    width: 60px;
-    height: 35px;
     font-size: calc($normal-font-size / 3);
-    &:hover {
-      width: 70px;
-      height: 45px;
-    }
   }
 }
 
