@@ -12,6 +12,7 @@
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@types/react-anchor-link-smooth-scroll": "^1.0.2",
+    "axios": "^1.6.0",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
@@ -20,6 +21,7 @@
     "tsparticles": "^2.12.0"
   },
   "devDependencies": {
+    "@rollup/plugin-replace": "^5.0.5",
     "@types/node-sass": "^4.11.4",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",

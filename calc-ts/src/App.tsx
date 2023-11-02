@@ -4,6 +4,7 @@ import ParticlesComponent from "./components/particlesComponent";
 import { SelectedPage } from "./shared/types";
 import Numbers from "./components/Numbers";
 import Temperature from "./components/Temperature";
+import Currency from "./components/Currency";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -30,6 +31,7 @@ function App() {
         setSelectedPage={setSelectedPage}
       />
       <Numbers setSelectedPage={setSelectedPage} />
+      <Currency setSelectedPage={setSelectedPage} />
       <Temperature setSelectedPage={setSelectedPage} />
       <ParticlesComponent />
     </>
