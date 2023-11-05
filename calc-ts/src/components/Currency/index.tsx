@@ -44,7 +44,7 @@ const Currency = ({ setSelectedPage }: Props) => {
           updateValue={updateValue}
           setValue={setValueFrom}
         />
-        <input className="input-currency" value={valueTo} disabled />
+        <input value={valueTo} disabled />
       </motion.div>
     </>
   );
