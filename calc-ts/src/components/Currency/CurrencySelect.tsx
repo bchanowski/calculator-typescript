@@ -1,14 +1,22 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./styles.scss";
 
 interface Currency {
   [currency: string]: string;
 }
 
-const CurrencySelect = () => {
-  const BASE_URL = "https://api.apilayer.com/currency_data/list";
+type Props = {
+  selectId: string;
+  onChange: () => void;
+};
+const CurrencySelect = ({ selectId, onChange }: Props) => {
+  const [currenciesList, setCurrenciesList] = useState<Currency>({
+    option1: "abc",
+    option2: "def",
+  });
+  /*/const BASE_URL = "https://api.apilayer.com/currency_data/list";
   const API_KEY = import.meta.env.VITE_API_KEY;
-  const [currenciesList, setCurrenciesList] = useState<Currency>({});
   useEffect(() => {
     const getData = async () => {
       console.log(import.meta.env.VITE_API_KEY);
@@ -18,12 +26,14 @@ const CurrencySelect = () => {
       setCurrenciesList(response.data.currencies);
     };
     getData().catch(console.error);
-  }, []);
+  }, [API_KEY]); commented for now just to not fetch data so much/*/
   return (
-    <div>
-      <select>
+    <div className="select-container">
+      <select id={selectId} className="select-currency" onChange={onChange}>
         {Object.entries(currenciesList).map(([currency, name]) => (
-          <option key={currency}>{name}</option>
+          <option key={currency} value={currency}>
+            {name}
+          </option>
         ))}
       </select>
     </div>

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import SelectTemp from "./SelectTemp";
 import "./styles.scss";
 import { useState, useEffect } from "react";
+import InputOnlyNumbers from "../../shared/InputOnlyNumbers";
 
 type Props = { setSelectedPage: (value: SelectedPage) => void };
 
@@ -24,17 +25,8 @@ const Temperature = ({ setSelectedPage }: Props) => {
   };
 
   const updateValue = (e: React.FormEvent<HTMLInputElement>) => {
-    setUserValue(parseFloat(e.currentTarget.value));
-  };
-
-  const onlyNumberInput = (e: React.KeyboardEvent<object>) => {
-    const key = parseInt(e.code);
-    if (key && (key <= 47 || key >= 58) && key != 8) {
-      e.preventDefault();
-    } else if (e.code == "Backspace" && userValue.toString().length == 1) {
-      setUserValue(0);
-      e.preventDefault();
-    }
+    if (e.currentTarget.value) setUserValue(parseFloat(e.currentTarget.value));
+    else setUserValue(0);
   };
 
   useEffect(() => {
@@ -74,17 +66,12 @@ const Temperature = ({ setSelectedPage }: Props) => {
           </div>
           <div className="temp-inputs-cont">
             <div className="temp-input-cont">
-              <input
-                className="temp-input"
-                type="text"
-                value={userValue}
-                onKeyDown={onlyNumberInput}
-                onChange={updateValue}
-              />
+              <InputOnlyNumbers value={userValue} updateValue={updateValue} />
               <a className="temp-unit-text">°{tempFrom}</a>
             </div>
             <div className="temp-input-cont">
               <input className="temp-input" value={resultValue} disabled />
+
               <a className="temp-unit-text">°{tempTo}</a>
             </div>
           </div>
