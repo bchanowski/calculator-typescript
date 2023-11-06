@@ -23,5 +23,24 @@ $box-shadow-white: 2px 4px 4px rgba(159, 159, 161, 0.8);
   }
   @media screen and (max-width: 520px) {
     font-size: calc($normal-font-size * 0.4);
+    width: 20rem;
+  }
+}
+
+.container-title {
+  font-size: $normal-font-size;
+  @media screen and (max-width: 720px) {
+    font-size: calc($normal-font-size * 0.7);
+  }
+  @media screen and (max-width: 520px) {
+    font-size: calc($normal-font-size * 0.4);
+  }
+}
+
+.normal-text {
+  margin: $margin;
+  @media screen and (max-width: 520px) {
+    font-size: calc($normal-font-size * 0.4);
+    margin: 0px;
   }
 }

@@ -13,8 +13,7 @@ type Props = {
 };
 const CurrencySelect = ({ selectId, onChange, defaultValue }: Props) => {
   const [currenciesList, setCurrenciesList] = useState<Currency>({
-    option1: "abc",
-    option2: "def",
+    default: "---",
   });
   const BASE_URL = "https://api.apilayer.com/currency_data/list";
   const API_KEY = import.meta.env.VITE_API_KEY;
@@ -31,7 +30,7 @@ const CurrencySelect = ({ selectId, onChange, defaultValue }: Props) => {
     <div className="select-container">
       <select
         id={selectId}
-        className="select-currency"
+        className="input-number"
         onChange={onChange}
         value={defaultValue}
       >

@@ -14,7 +14,7 @@
   align-items: center;
   z-index: 30;
   margin: $margin;
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1120px) {
     flex-direction: column;
   }
   @media screen and (max-width: 520px) {
@@ -32,28 +32,11 @@
   }
 }
 
-.temp-title {
-  font-size: $normal-font-size;
-  @media screen and (max-width: 720px) {
-    font-size: calc($normal-font-size * 0.7);
-  }
-  @media screen and (max-width: 520px) {
-    font-size: calc($normal-font-size * 0.4);
-  }
-}
-
-.temp-text {
-  margin: $margin;
-  @media screen and (max-width: 520px) {
-    font-size: calc($normal-font-size * 0.4);
-    margin: 0px;
-  }
-}
-
 .temp-radio-container {
   margin: $margin;
   padding: $margin;
   background-color: $background-box-color;
+  border-radius: 10px;
 }
 
 .temp-inputs-cont {

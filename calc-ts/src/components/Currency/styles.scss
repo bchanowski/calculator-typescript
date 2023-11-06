@@ -1,9 +1,36 @@
+@import "../../shared/shared.scss";
+
 .select-container {
   display: flex;
+  flex-direction: column;
   z-index: 30;
+  color: $secondary-color;
+  justify-content: center;
+  align-items: center;
 }
 
-.select-currency {
+.select-currency-container {
   display: flex;
-  z-index: 30;
+  flex-direction: column;
+  margin-top: 11px;
+}
+
+.currency-value-container {
+  display: flex;
+  flex-direction: column;
+  margin: $margin;
+  padding: $margin;
+}
+
+.exchange-container {
+  display: flex;
+  flex-direction: row;
+  background-color: $background-box-color;
+  border-radius: 10px;
+  padding: $margin;
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

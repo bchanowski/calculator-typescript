@@ -24,7 +24,7 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <>
+    <div>
       <Navbar
         isTopOfPage={isTopOfPage}
         selectedPage={selectedPage}
@@ -34,7 +34,7 @@ function App() {
       <Currency setSelectedPage={setSelectedPage} />
       <Temperature setSelectedPage={setSelectedPage} />
       <ParticlesComponent />
-    </>
+    </div>
   );
 }
 

@@ -19,7 +19,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1300px)");
   const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
   return (
-    <>
+    <nav>
       <div className={`${navbarBackground} container`}>
         <div className="left-nav">CalcTS</div>
         {isAboveMediumScreens ? (
@@ -79,7 +79,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
           </div>
         )}
       </div>
-    </>
+    </nav>
   );
 };
 

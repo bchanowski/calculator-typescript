@@ -44,12 +44,20 @@ const Temperature = ({ setSelectedPage }: Props) => {
     } else setResultValue(userValue);
   }, [userValue, tempFrom, tempTo]);
   return (
-    <>
+    <section id="temperature">
       <motion.div
         className="temp-container"
         onViewportEnter={() => setSelectedPage(SelectedPage.Temperature)}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+        variants={{
+          hidden: { opacity: 0, x: -50 },
+          visible: { opacity: 1, x: 0 },
+        }}
       >
-        <h1 className="temp-title">TEMPERATURE CALCULATOR</h1>
+        <h1 className="container-title">TEMPERATURE CALCULATOR</h1>
         <div className="temp-container-select">
           <div className="select-temps-container">
             <SelectTemp
@@ -57,7 +65,7 @@ const Temperature = ({ setSelectedPage }: Props) => {
               stateTemp={tempFrom}
               onChangeTemp={onRadioChangeFrom}
             />
-            <h1 className="temp-text">TO</h1>
+            <h1 className="normal-text">TO</h1>
             <SelectTemp
               radioName="tempTo"
               stateTemp={tempTo}
@@ -76,7 +84,7 @@ const Temperature = ({ setSelectedPage }: Props) => {
           </div>
         </div>
       </motion.div>
-    </>
+    </section>
   );
 };
 

@@ -69,10 +69,18 @@ const Numbers = ({ setSelectedPage }: Props) => {
     return true;
   };
   return (
-    <>
+    <section id="numbers">
       <motion.div
         className="num-container"
         onViewportEnter={() => setSelectedPage(SelectedPage.Numbers)}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+        variants={{
+          hidden: { opacity: 0, x: -50 },
+          visible: { opacity: 1, x: 0 },
+        }}
       >
         <TextBox
           title={calculatorText.title}
@@ -171,7 +179,7 @@ const Numbers = ({ setSelectedPage }: Props) => {
           </div>
         </div>
       </motion.div>
-    </>
+    </section>
   );
 };
 
