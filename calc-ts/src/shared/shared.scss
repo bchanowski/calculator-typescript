@@ -5,3 +5,23 @@ $normal-font-size: 50px;
 $transparent: rgba(0, 0, 0, 0);
 $background-box-color: rgba(25, 37, 77, 0.4);
 $box-shadow-white: 2px 4px 4px rgba(159, 159, 161, 0.8);
+
+.input-number {
+  z-index: 30;
+  font-size: calc($normal-font-size / 2);
+  font-weight: 600;
+  color: $primary-color;
+  background-color: $secondary-color;
+  border-radius: 8px;
+  box-shadow: $box-shadow-white;
+  border: 2px $secondary-color solid;
+  padding: 0px;
+  &:disabled {
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+  @media screen and (max-width: 520px) {
+    font-size: calc($normal-font-size * 0.4);
+  }
+}

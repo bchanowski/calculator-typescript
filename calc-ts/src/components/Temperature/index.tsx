@@ -70,8 +70,7 @@ const Temperature = ({ setSelectedPage }: Props) => {
               <a className="temp-unit-text">°{tempFrom}</a>
             </div>
             <div className="temp-input-cont">
-              <input className="temp-input" value={resultValue} disabled />
-
+              <input className="input-number" value={resultValue} disabled />
               <a className="temp-unit-text">°{tempTo}</a>
             </div>
           </div>
