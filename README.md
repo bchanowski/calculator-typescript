@@ -1,5 +1,7 @@
 # calculator-typescript
 
+Check the page here - https://calculator-typescript.pages.dev/
+
 ### A simple calculator app that allows users to calculate numbers, currency exchange rates and temperature.  Created using react, typescript, vite and scss. Background particles made with reactts-particles and all animation with framer-motion.  
 
 ### Numbers and Navbar  
